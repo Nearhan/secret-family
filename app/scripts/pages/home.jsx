@@ -49,7 +49,10 @@ class Home extends React.Component {
   imgsrc() {
     var img = "images/"
     switch (this.state.month) {
-      case 6: return img + "familybeachday.gif";
+      case 2: return img + "music-concert.gif";
+      case 3: return img + "play-catch.gif";
+      case 6: return img + "TV-TIME.gif";
+      case 7: return img + "familybeachday.gif";
       default: return img + "FAMILY-NORMAL.gif";
     }
   }
@@ -57,10 +60,11 @@ class Home extends React.Component {
   modalText() {
     var mtext = [
       "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. And there's your son, Junior, and your daughter, June.",
-      "Junior has a clarinet recital this Wednesday.",
-      "June made the lacross team.",
+      "June has a clarinet recital this Wednesday.",
+      "Junior wants to play catch.",
       "Barbara got a new cat.",
       "Why do you travel so much for work?",
+      "What do you want to watch tonight?",
       "Beach! Fun! Yeah!"
     ];
     return mtext[this.state.month - 1];
@@ -70,9 +74,10 @@ class Home extends React.Component {
     var mbuttons = [
       ["Cool", "Awesome"],
       ["Of course I'll be there.", "I'll try to make it."],
-      ["Great job, kiddo!", "That's nice."],
+      ["Look at the arm on this kid.", "Great job, sport!"],
       ["Okay.", "Who's Barbara?"],
       ["I'm just really busy right now.", "What do you mean?"],
+      ["Local news", "Emeril"],
       ["Cowabunga!", "This is the best vacation ever."]
     ];
     return mbuttons[this.state.month - 1];
@@ -106,7 +111,9 @@ class Home extends React.Component {
 
     <Modal show={this.state.showModal} onHide={this.close}>
       <Modal.Body style={{fontSize: "18px"}}>
+        <span style={{fontSize: "22px"}}>
         {this.modalText()}
+        </span>
       </Modal.Body>
       <Modal.Footer>
         <button onClick={this.close} style={{fontSize: "20px"}}>
@@ -119,23 +126,23 @@ class Home extends React.Component {
     </Modal>
 
     <Row style={{height: '4%'}}></Row>
-    <Row style={{height: '16%'}}>
+    <Row style={{height: '12%'}}>
       <div className="btn-group-ability">
-        <button disabled style={{width: '40%'}}>
-          <span style={{fontSize: "20px", fontWeight: "bold", border: "0 solid #96A796"}}>
-            Month {this.state.month}
-          </span>
-        </button>
-        <button style={{width: '30%'}}
+        <button style={{width: '60%'}}
           onClick={this.incrementMonth}>
           <span style={{fontSize: "20px", fontWeight: "bold"}}>
-            Next
+            Spend Time
+          </span>
+        </button>
+        <button style={{width: '30%'}}>
+          <span style={{fontSize: "20px", fontWeight: "bold"}}>
+            Quit
           </span>
         </button>
       </div>
     </Row>
 
-    <Row style={{height: '42%'}}>
+    <Row style={{height: '36%'}}>
       <h2>Happiness</h2>
       <div className="statusbar"
         style={{width: this.statusBars()[0]}}></div>
