@@ -100,10 +100,10 @@ class Home extends React.Component {
     <Grid style={{height: '620px'}}>
 
     <Modal show={this.state.showModal} onHide={this.close}>
-      <Modal.Body style={{fontSize: "14px"}}>
+      <Modal.Body style={{fontSize: "18px"}}>
         {this.modalText()}
       </Modal.Body>
-      <Modal.Footer style={{fontSize: "16px"}}>
+      <Modal.Footer style={{fontSize: "22px"}}>
         <button onClick={this.close}>
           {this.modalButtons()[0]}
         </button>
@@ -116,12 +116,12 @@ class Home extends React.Component {
     <Row style={{height: '4%'}}></Row>
     <Row style={{height: '16%'}}>
       <div className="btn-group-ability">
-        <button disabled style={{width: '36%'}}>
-          <span style={{fontSize: "20px", fontWeight: "bold"}}>
+        <button disabled style={{width: '40%'}}>
+          <span style={{fontSize: "20px", fontWeight: "bold", border: "0 solid #96A796"}}>
             Month {this.state.month}
           </span>
         </button>
-        <button style={{width: '20%'}}
+        <button style={{width: '30%'}}
           onClick={this.incrementMonth}>
           <span style={{fontSize: "20px", fontWeight: "bold"}}>
             Next
