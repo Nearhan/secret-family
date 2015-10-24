@@ -7,10 +7,10 @@ import Info from './pages/info.jsx';
 import NotFound from './pages/notFound.jsx';
 
 var routes = (
-  <Route name="app" path="/" handler={ App }>
+  <Route name="app" path="/" handler={ App } style={{height: '100%'}}>
     <Route name="info" handler={ Info } />
-    <Route name="home" handler={ Home } />
-    <DefaultRoute handler={ Home } />
+    <Route name="home" handler={ Home } style={{height: '100%'}}/>
+    <DefaultRoute handler={ Home } style={{height: '100%'}}/>
     <NotFoundRoute handler={ NotFound } />
   </Route>
 );

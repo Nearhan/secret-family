@@ -1,21 +1,18 @@
 import React from 'react';
-import ItemList from '../components/itemList.jsx';
-import ItemStore from '../stores/itemStore';
-import ItemActions from '../actions/itemActions';
+import {Grid, Row, Col} from 'react-bootstrap';
+import MonthCounter from '../components/MonthCounter.jsx';
 
 class Home extends React.Component {
-  
+
   constructor(props){
     super(props);
     this.state = {
-      items : [],
-      loading: false
+      month: 1
     };
+    this.incrementMonth = this.incrementMonth.bind(this);
   }
 
   componentDidMount() {
-    this.unsubscribe = ItemStore.listen(this.onStatusChange.bind(this));
-    ItemActions.loadItems();
   }
 
   componentWillUnmount() {
@@ -26,13 +23,43 @@ class Home extends React.Component {
     this.setState(state);
   }
 
+  incrementMonth() {
+    var m = this.state.month + 1;
+    this.setState({
+      month: m
+    });
+  }
+
   render() {
 
     return (
-      <div>
-        <h1>Home Area</h1>
-        <ItemList { ...this.state } />
+    <Grid style={{height: '620px'}}>
+
+    <Row style={{height: '16%'}}>
+      <div className="btn-group-ability">
+        <button disabled style={{width: '30%'}}>
+          <span style={{fontSize: "18px", fontWeight: "bold"}}>
+            Month {this.state.month}
+          </span>
+        </button>
+        <button style={{width: '20%'}}
+          onClick={this.incrementMonth}>
+          <span style={{fontSize: "18px", fontWeight: "bold"}}>
+            Next
+          </span>
+        </button>
       </div>
+    </Row>
+
+    <Row style={{height: '42%'}}>
+      Middle
+    </Row>
+
+    <Row style={{height: '42%'}}>
+      Bottom
+    </Row>
+
+    </Grid>
     );
   }
 }
