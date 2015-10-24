@@ -3,11 +3,7 @@ import ItemList from '../components/itemList.jsx';
 import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
 import { Link, Router } from 'react-router';
-
-
-var wtf = false;
-
-console.log(wtf);
+import {Grid, Row, Col, Modal} from 'react-bootstrap';
 
 class Home extends React.Component {
   
@@ -15,8 +11,11 @@ class Home extends React.Component {
     super(props);
     this.state = {
         one: false,
-        two: false
+        name: ''
     };
+
+    this.clickButton = this.clickButton.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -33,8 +32,7 @@ class Home extends React.Component {
   }
 
   clickButton(event) {
-      wtf = true;
-      console.log(wtf);
+      this.setState({one: true})
   }
 
   handleChange(event) {
@@ -43,16 +41,19 @@ class Home extends React.Component {
 
   render() {
     
-      if (!wtf) {
+      if (!this.state.one) {
           var x = (<div>
-            <h3> Enter your Wifes Name: </h3>
-            <input type="text" value={this.state.value} onChange={this.handleChange} /> 
-            <button onClick={this.clickButton}> Enter </button>
+            <h1> Hello <b> Dave </b> </h1>
+            <h1> Enter your Wife's Name: </h1>
+            <input style={{fontSize: '32px'}} type="text" value={this.state.value} onChange={this.handleChange} /> 
+            <button style={{fontSize: '32px'}} onClick={this.clickButton}> Enter </button>
             </div>)
 
       } else {
 
-        x = (<Thing name={this.state.value} />)
+        console.log(this.state.name);
+
+        x = (<Thing name={this.state.name} />)
 
       }
 
@@ -62,13 +63,15 @@ class Home extends React.Component {
 
 class Thing extends React.Component {
     constructor(props){
+        console.log(props);
         super(props);
     }
     render() {
         return (
                 <div>
-                    <h3> Why do you keep calling me <b> {this.props.name} </b> </h3>
-                    <h3> My name is Margaret </h3>
+                    <h1> Why do you keep calling me <b>{this.props.name}</b>?</h1>
+                    <h1> My name is <b> Margaret </b> </h1>
+                    <button style={{fontSize: '32px'}} > <Link to={`/`}> I'm so Sorry </Link> </button>
                 </div>
                )
     }

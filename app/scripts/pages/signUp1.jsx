@@ -2,8 +2,9 @@ import React from 'react';
 import ItemList from '../components/itemList.jsx';
 import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
-import { Button } from 'react-bootstrap';
 import { Link, Router } from 'react-router';
+
+import {Grid, Row, Col, Modal} from 'react-bootstrap';
 
 class Home extends React.Component {
   
@@ -34,10 +35,13 @@ class Home extends React.Component {
   render() {
 
     return (
-      <div>
+
+    <Grid style={{height: '620px'}}>
+      <Row>
         <h1> Secret Family New Jersey </h1>
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </Button>
-      </div>
+        <button style={{fontSize: '32px'}} onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </button>
+      </Row>
+    </Grid>
     );
   }
 }

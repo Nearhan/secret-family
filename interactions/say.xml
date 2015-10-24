@@ -2,14 +2,14 @@
 <Response> 
     <Pause length="3"/>
     <Say voice="alice">
-        Dave, it’s Margaret. I need to get this off my chest.
-        The kids and I love you so much but we are tired of sharing you.
-        You have a decision to make -- it’s us or them.
+        Listen up, Dave.
+        I know there’s someone else in your life.
+        The kids and I ... we love you so much. But we are tired of sharing you. How could you do this to us?
     </Say>
     <Pause length="4"/>
     <Say voice="alice">
-        You have 24 hours to decide.
-        If you don’t leave your family for us, buckle up, asshole.
-        Judy got a new Cat
+        Do you still love us?
+        If yes, show me and our children a sign that your love is real.
+        Barbra has a new cat.
     </Say>
 </Response>

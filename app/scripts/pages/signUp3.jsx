@@ -5,6 +5,8 @@ import ItemActions from '../actions/itemActions';
 import { Button } from 'react-bootstrap';
 import { Link, Router } from 'react-router';
 
+import {Grid, Row, Col, Modal} from 'react-bootstrap';
+
 class Home extends React.Component {
   
   constructor(props){
@@ -35,9 +37,9 @@ class Home extends React.Component {
 
     return (
       <div>
-        <h3> Enter your Name: </h3>
-        <input /> 
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/signUp4`}> Continue </Link> </Button>
+        <h1> Enter your Name: </h1>
+        <input style={{fontSize: '32px'}} /> 
+        <button style={{fontSize: '32px'}} onClick={this.click}> <Link to={`/signUp4`}> Continue </Link> </button>
       </div>
     );
   }
