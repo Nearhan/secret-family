@@ -49,14 +49,19 @@ class Home extends React.Component {
   imgsrc() {
     var img = "images/"
     switch (this.state.month) {
+      case 6: return img + "familybeachday.gif";
       default: return img + "FAMILY-NORMAL.gif";
     }
   }
 
   modalText() {
     var mtext = [
-      "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. Your son, Junior. Your daughter, June.",
-      "Junior has a clarinet recital this Wednesday."
+      "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. And there's your son, Junior, and your daughter, June.",
+      "Junior has a clarinet recital this Wednesday.",
+      "June made the lacross team.",
+      "Judy got a new cat.",
+      "Why do you travel so much for work?",
+      "Beach! Fun! Yeah!"
     ];
     return mtext[this.state.month - 1];
   }
@@ -64,7 +69,11 @@ class Home extends React.Component {
   modalButtons() {
     var mbuttons = [
       ["Cool", "Awesome"],
-      ["Of course I'll be there", "I'll try to make it"]
+      ["Of course I'll be there.", "I'll try to make it."],
+      ["Great job, kiddo!", "That's nice."],
+      ["Okay.", "Who's Judy?"],
+      ["I'm just really busy right now.", "What do you mean?"],
+      ["Cowabunga!", "This is the best vacation ever."]
     ];
     return mbuttons[this.state.month - 1];
   }
