@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {Grid, Row, Col, Modal} from 'react-bootstrap';
 import MonthCounter from '../components/MonthCounter.jsx';
 
@@ -59,7 +59,7 @@ class Home extends React.Component {
       "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. And there's your son, Junior, and your daughter, June.",
       "Junior has a clarinet recital this Wednesday.",
       "June made the lacross team.",
-      "Judy got a new cat.",
+      "Barbara got a new cat.",
       "Why do you travel so much for work?",
       "Beach! Fun! Yeah!"
     ];
@@ -71,7 +71,7 @@ class Home extends React.Component {
       ["Cool", "Awesome"],
       ["Of course I'll be there.", "I'll try to make it."],
       ["Great job, kiddo!", "That's nice."],
-      ["Okay.", "Who's Judy?"],
+      ["Okay.", "Who's Barbara?"],
       ["I'm just really busy right now.", "What do you mean?"],
       ["Cowabunga!", "This is the best vacation ever."]
     ];
@@ -80,7 +80,12 @@ class Home extends React.Component {
 
   statusBars() {
     var bars = [
-      ["100%", "100%", "100%"]
+      ["80%", "86%", "52%"],
+      ["72%", "67%", "64%"],
+      ["65%", "43%", "84%"],
+      ["100%", "83%", "67%"],
+      ["64%", "90%", "72%"],
+      ["100%", "85%", "64%"]
     ];
 
     if (this.state.month <= bars.length) {
@@ -97,17 +102,17 @@ class Home extends React.Component {
   render() {
 
     return (
-    <Grid style={{height: '620px'}}>
+    <Grid style={{height: '580px'}}>
 
     <Modal show={this.state.showModal} onHide={this.close}>
-      <Modal.Body style={{fontSize: "14px"}}>
+      <Modal.Body style={{fontSize: "18px"}}>
         {this.modalText()}
       </Modal.Body>
-      <Modal.Footer style={{fontSize: "16px"}}>
-        <button onClick={this.close}>
+      <Modal.Footer>
+        <button onClick={this.close} style={{fontSize: "20px"}}>
           {this.modalButtons()[0]}
         </button>
-        <button onClick={this.close}>
+        <button onClick={this.close} style={{fontSize: "20px"}}>
           {this.modalButtons()[1]}
         </button>
       </Modal.Footer>
@@ -116,12 +121,12 @@ class Home extends React.Component {
     <Row style={{height: '4%'}}></Row>
     <Row style={{height: '16%'}}>
       <div className="btn-group-ability">
-        <button disabled style={{width: '36%'}}>
-          <span style={{fontSize: "20px", fontWeight: "bold"}}>
+        <button disabled style={{width: '40%'}}>
+          <span style={{fontSize: "20px", fontWeight: "bold", border: "0 solid #96A796"}}>
             Month {this.state.month}
           </span>
         </button>
-        <button style={{width: '20%'}}
+        <button style={{width: '30%'}}
           onClick={this.incrementMonth}>
           <span style={{fontSize: "20px", fontWeight: "bold"}}>
             Next
