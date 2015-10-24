@@ -6,15 +6,14 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
-        <Header />
-        <div className="content">
+      <div style={{height: '100%'}}>
+        <div className="content" style={{height: '100%'}}>
           <RouteHandler/>
         </div>
       </div>
     );
   }
-  
+
 }
 
 export default App;

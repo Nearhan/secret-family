@@ -1,5 +1,6 @@
 @import 'normalize'
 @import 'helper'
+@import 'bootstrap/index'
 
 /* variables */
 $lightgrey = #999
@@ -9,11 +10,23 @@ $black = #222
 $white = #f7f7f7
 
 html
+body
+  font-family: monospace
+
+html
 button
 input
 select
-textarea 
+textarea
   color: $black
+  width: 100%
+  height: 100%
+
+button
+  background-color: #96A796
+  color: #030
+  border: #030 solid thick
+  margin: 4px
 
 a
 a:visited
@@ -22,11 +35,12 @@ a:visited
 
 a:hover
   color: lighten($linkColor,10%)
-  
+
 body
   color: $black
   font-size: 1em
   line-height: 1.5
+  background: #96a796
   
 header
   background: $grey
@@ -46,3 +60,13 @@ header
     
 .content
   padding: 1em
+
+.weekcounter
+  top: 20px
+  left: 10px
+
+.quit
+  position: absolute
+  top: 10px
+  left: 10px
+
