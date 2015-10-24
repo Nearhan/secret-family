@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {Grid, Row, Col, Modal} from 'react-bootstrap';
 import MonthCounter from '../components/MonthCounter.jsx';
 
@@ -80,7 +80,12 @@ class Home extends React.Component {
 
   statusBars() {
     var bars = [
-      ["100%", "100%", "100%"]
+      ["80%", "86%", "52%"],
+	  ["72%", "67%", "64%"],
+	  ["65%", "43%", "84%"],
+	  ["100%", "83%", "67%"],
+	  ["64%", "90%", "72%"],
+	  ["74%", "85%", "64%"]
     ];
 
     if (this.state.month <= bars.length) {
