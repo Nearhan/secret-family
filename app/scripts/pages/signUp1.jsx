@@ -38,7 +38,7 @@ class Home extends React.Component {
     <Grid style={{height: '620px'}}>
       <Row>
         <h1 style={{fontSize: '49px'}}> Secret Family in New Jersey </h1>
-        <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </button>
+        <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp2`}>Start a secret family</Link> </button>
       </Row>
     </Grid>
     );
