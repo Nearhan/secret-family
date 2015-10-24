@@ -5,7 +5,7 @@ client.sendMessage({
 
     to:'+18476443169', // Any number Twilio can deliver to
     from: '+12407248522', // A number you bought from Twilio and can use for outbound communication
-    body: 'word to your mother.' // body of the SMS message
+    body: 'I found a wedding ring in the bathroom and it doesn’t look like yours. Care to explain?'// body of the SMS message
 
 }, function(err, responseData) { //this function is executed when a response is received from Twilio
     if (err) console.log(err);
