@@ -3414,9 +3414,9 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
-  border: 1px solid #999;
-  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #96a796;
+  border: 1px solid #030;
+  border: 1px solid #030;
   border-radius: 6px;
   box-shadow: 0 3px 9px rgba(0,0,0,0.5);
   background-clip: padding-box;
@@ -3429,7 +3429,7 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000;
+  background-color: #96a796;
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -3441,7 +3441,7 @@ button.close {
 }
 .modal-header {
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #030;
   min-height: 16.428571429px;
 }
 .modal-header .close {
@@ -3458,7 +3458,7 @@ button.close {
 .modal-footer {
   padding: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #030;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
@@ -3707,6 +3707,7 @@ button.close {
 /* variables */
 html,
 body {
+  font-size: 16px;
   font-family: monospace;
 }
 html,
@@ -3723,6 +3724,7 @@ button {
   color: #030;
   border: #030 solid thick;
   margin: 4px;
+  font-size: 16px;
 }
 a,
 a:visited {

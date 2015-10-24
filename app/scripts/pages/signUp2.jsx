@@ -2,8 +2,9 @@ import React from 'react';
 import ItemList from '../components/itemList.jsx';
 import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
-import { Button } from 'react-bootstrap';
 import { Link, Router } from 'react-router';
+
+import {Grid, Row, Col, Modal} from 'react-bootstrap';
 
 class Home extends React.Component {
   
@@ -34,11 +35,11 @@ class Home extends React.Component {
   render() {
 
     return (
-      <div>
-        <h1> I want a secret </h1>
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/signUp3`}> Wife </Link> </Button>
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/signUp3`}> Husband </Link> </Button>
-      </div>
+        <Grid style={{height: '620px'}}>
+            <h1 style={{fontSize: '49px'}}> I want a secret </h1>
+            <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp3`}> Wife </Link> </button>
+            <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp3`}> Husband </Link> </button>
+        </Grid>
     );
   }
 }
