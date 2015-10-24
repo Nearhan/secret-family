@@ -61,6 +61,7 @@ gulp.task('styles',function(cb) {
 // add livereload on the given port
 gulp.task('serve', function() {
   $.connect.server({
+    host: '0.0.0.0.',
     root: dist,
     port: port,
     livereload: {
