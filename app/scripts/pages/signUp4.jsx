@@ -2,16 +2,20 @@ import React from 'react';
 import ItemList from '../components/itemList.jsx';
 import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
-import { Button } from 'react-bootstrap';
 import { Link, Router } from 'react-router';
+
+
+var wtf = false;
+
+console.log(wtf);
 
 class Home extends React.Component {
   
   constructor(props){
     super(props);
     this.state = {
-      items : [],
-      loading: false
+        one: false,
+        two: false
     };
   }
 
@@ -28,19 +32,45 @@ class Home extends React.Component {
     this.setState(state);
   }
 
-  click(e) {
+  clickButton(event) {
+      wtf = true;
+      console.log(wtf);
+  }
+
+  handleChange(event) {
+    this.setState({name: event.target.value});
   }
 
   render() {
+    
+      if (!wtf) {
+          var x = (<div>
+            <h3> Enter your Wifes Name: </h3>
+            <input type="text" value={this.state.value} onChange={this.handleChange} /> 
+            <button onClick={this.clickButton}> Enter </button>
+            </div>)
 
-    return (
-      <div>
-        <h3> Enter your Wifes Name: </h3>
-        <input /> 
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/`}> Sign Up </Link> </Button>
-      </div>
-    );
+      } else {
+
+        x = (<Thing name={this.state.value} />)
+
+      }
+
+    return (x);
   }
 }
 
+class Thing extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return (
+                <div>
+                    <h3> Why do you keep calling me <b> {this.props.name} </b> </h3>
+                    <h3> My name is Margaret </h3>
+                </div>
+               )
+    }
+}
 export default Home;
