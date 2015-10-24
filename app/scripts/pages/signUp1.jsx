@@ -35,11 +35,10 @@ class Home extends React.Component {
   render() {
 
     return (
-
     <Grid style={{height: '620px'}}>
       <Row>
-        <h1> Secret Family New Jersey </h1>
-        <button style={{fontSize: '32px'}} onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </button>
+        <h1 style={{fontSize: '49px'}}> Secret Family in New Jersey </h1>
+        <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </button>
       </Row>
     </Grid>
     );

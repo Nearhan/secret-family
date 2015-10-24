@@ -36,11 +36,11 @@ class Home extends React.Component {
   render() {
 
     return (
-      <div>
-        <h1> Enter your Name: </h1>
-        <input style={{fontSize: '32px'}} /> 
-        <button style={{fontSize: '32px'}} onClick={this.click}> <Link to={`/signUp4`}> Continue </Link> </button>
-      </div>
+        <div>
+        <h1 style={{fontSize: '49px'}}> Enter your Name: </h1>
+        <input style={{fontSize: '49px'}} /> 
+        <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp4`}> Continue </Link> </button>
+        </div>
     );
   }
 }

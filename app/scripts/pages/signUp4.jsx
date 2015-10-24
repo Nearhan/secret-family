@@ -42,11 +42,12 @@ class Home extends React.Component {
   render() {
     
       if (!this.state.one) {
-          var x = (<div>
-            <h1> Hello <b> Dave </b> </h1>
-            <h1> Enter your Wife's Name: </h1>
-            <input style={{fontSize: '32px'}} type="text" value={this.state.value} onChange={this.handleChange} /> 
-            <button style={{fontSize: '32px'}} onClick={this.clickButton}> Enter </button>
+          var x = (
+                <div>
+                <h1 style={{fontSize: '49px'}}> Hello <b> Dave </b> </h1>
+                <h1 style={{fontSize: '49px'}}> Enter your Wife's Name: </h1>
+                <input style={{fontSize: '49px'}} type="text" value={this.state.value} onChange={this.handleChange} /> 
+                <button style={{fontSize: '49px'}} onClick={this.clickButton}> Enter </button>
             </div>)
 
       } else {
@@ -67,11 +68,10 @@ class Thing extends React.Component {
         super(props);
     }
     render() {
-        return (
-                <div>
-                    <h1> Why do you keep calling me <b>{this.props.name}</b>?</h1>
-                    <h1> My name is <b> Margaret </b> </h1>
-                    <button style={{fontSize: '32px'}} > <Link to={`/`}> I'm so Sorry </Link> </button>
+        return (<div>
+                    <h1 style={{fontSize: '49px'}}> Why do you keep calling me <b>{this.props.name}</b>?</h1>
+                    <h1 style={{fontSize: '49px'}}> My name is <b> Margaret </b> </h1>
+                    <button style={{fontSize: '49px', height: '20%'}} > <Link to={`/`}> I'm so sorry </Link> </button>
                 </div>
                )
     }

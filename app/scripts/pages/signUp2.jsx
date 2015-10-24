@@ -36,7 +36,7 @@ class Home extends React.Component {
 
     return (
         <Grid style={{height: '620px'}}>
-            <h1 style={{fontSize: '49px'}}> I want a secret ...</h1>
+            <h1 style={{fontSize: '49px'}}> I want a secret </h1>
             <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp3`}> Wife </Link> </button>
             <button style={{fontSize: '49px', height: '20%' }} onClick={this.click}> <Link to={`/signUp3`}> Husband </Link> </button>
         </Grid>
