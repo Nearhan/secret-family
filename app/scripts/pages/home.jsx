@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Modal} from 'react-bootstrap';
 import MonthCounter from '../components/MonthCounter.jsx';
 
 class Home extends React.Component {
@@ -7,11 +7,23 @@ class Home extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      showModal: true,
       month: 1
     };
     this.incrementMonth = this.incrementMonth.bind(this);
     this.imgsrc = this.imgsrc.bind(this);
     this.affection = this.affection.bind(this);
+    this.close = this.close.bind(this);
+    this.open = this.open.bind(this);
+    this.modalText = this.modalText.bind(this);
+    this.modalButtons = this.modalButtons.bind(this);
+  }
+
+  close() {
+    this.setState({showModal: false});
+  }
+  open() {
+    this.setState({showModal: true});
   }
 
   componentDidMount() {
@@ -28,7 +40,8 @@ class Home extends React.Component {
   incrementMonth() {
     var m = this.state.month + 1;
     this.setState({
-      month: m
+      month: m,
+      showModal: true
     });
   }
 
@@ -39,6 +52,20 @@ class Home extends React.Component {
     }
   }
 
+  modalText() {
+    var mtext = [
+      "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. Your son, Junior. Your daughter, June"
+    ];
+    return mtext[this.state.month - 1];
+  }
+
+  modalButtons() {
+    var mbuttons = [
+      ["Cool", "Awesome"]
+    ];
+    return mbuttons[this.state.month - 1];
+  }
+
   affection() {
   }
 
@@ -46,6 +73,20 @@ class Home extends React.Component {
 
     return (
     <Grid style={{height: '620px'}}>
+
+    <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal.Body style={{fontSize: "14px"}}>
+        {this.modalText()}
+      </Modal.Body>
+      <Modal.Footer style={{fontSize: "16px"}}>
+        <button onClick={this.close}>
+          {this.modalButtons()[0]}
+        </button>
+        <button onClick={this.close}>
+          {this.modalButtons()[1]}
+        </button>
+      </Modal.Footer>
+    </Modal>
 
     <Row style={{height: '4%'}}></Row>
     <Row style={{height: '16%'}}>
