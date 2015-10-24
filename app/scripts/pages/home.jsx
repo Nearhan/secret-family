@@ -24,7 +24,9 @@ class Home extends React.Component {
     this.setState({showModal: false});
   }
   open() {
-    this.setState({showModal: true});
+    if (this.state.month !== 9) {
+      this.setState({showModal: true});
+    }
   }
 
   componentDidMount() {
@@ -39,7 +41,7 @@ class Home extends React.Component {
   }
 
   incrementMonth() {
-    var m = this.state.month + 1;
+    var m = this.state.month === 9 ? 9 : this.state.month + 1;
     this.setState({
       month: m,
       showModal: true
@@ -53,6 +55,8 @@ class Home extends React.Component {
       case 3: return img + "play-catch.gif";
       case 6: return img + "TV-TIME.gif";
       case 7: return img + "familybeachday.gif";
+      case 8: return img + "dinner.gif";
+      case 9: return img + "MARG-SOLO.gif";
       default: return img + "FAMILY-NORMAL.gif";
     }
   }
@@ -65,7 +69,8 @@ class Home extends React.Component {
       "Barbara got a new cat.",
       "Why do you travel so much for work?",
       "What do you want to watch tonight?",
-      "Beach! Fun! Yeah!"
+      "Beach! Fun! Yeah!",
+      "Where do you think you're going? I just made dinner."
     ];
     return mtext[this.state.month - 1];
   }
@@ -74,11 +79,12 @@ class Home extends React.Component {
     var mbuttons = [
       ["Cool", "Awesome"],
       ["Of course I'll be there.", "I'll try to make it."],
-      ["Look at the arm on this kid.", "Great job, sport!"],
+      ["Easy there, Stephen Strasburg!", "Easy there, New Jersey's own Derek Jeter!"],
       ["Okay.", "Who's Barbara?"],
-      ["I'm just really busy right now.", "What do you mean?"],
+      ["It's the busy season.", "What do you mean?"],
       ["Local news", "Emeril"],
-      ["Cowabunga!", "This is the best vacation ever."]
+      ["Cowabunga!", "This is the best vacation ever."],
+      ["I'm not that hungry.", "I don't feel well."]
     ];
     return mbuttons[this.state.month - 1];
   }
@@ -87,10 +93,13 @@ class Home extends React.Component {
     var bars = [
       ["80%", "86%", "52%"],
       ["72%", "67%", "64%"],
-      ["65%", "43%", "84%"],
+      ["80%", "86%", "52%"],
+      ["65%", "73%", "84%"],
       ["100%", "83%", "67%"],
       ["64%", "90%", "72%"],
-      ["100%", "85%", "64%"]
+      ["100%", "85%", "64%"],
+      ["20%", "50%", "20%"],
+      ["4%", "40%", "56%"]
     ];
 
     if (this.state.month <= bars.length) {
@@ -111,7 +120,7 @@ class Home extends React.Component {
 
     <Modal show={this.state.showModal} onHide={this.close}>
       <Modal.Body style={{fontSize: "18px"}}>
-        <span style={{fontSize: "22px"}}>
+        <span style={{fontSize: "22px", color: "#96A796"}}>
         {this.modalText()}
         </span>
       </Modal.Body>
@@ -134,7 +143,8 @@ class Home extends React.Component {
             Spend Time
           </span>
         </button>
-        <button style={{width: '30%'}}>
+        <button style={{width: '30%'}}
+          onClick={this.incrementMonth}>
           <span style={{fontSize: "20px", fontWeight: "bold"}}>
             Quit
           </span>
