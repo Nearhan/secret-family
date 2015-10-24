@@ -3769,3 +3769,8 @@ header .nav-item a.active {
   top: 10px;
   left: 10px;
 }
+.statusbar {
+  height: 15px;
+  background-color: #030;
+  border: 1px solid #030;
+}
