@@ -71,7 +71,7 @@ class Thing extends React.Component {
         return (<div>
                     <h1 style={{fontSize: '49px'}}> Why do you keep calling me <b>{this.props.name}</b>?</h1>
                     <h1 style={{fontSize: '49px'}}> My name is <b> Margaret </b> </h1>
-                    <button style={{fontSize: '49px', height: '20%'}} > <Link to={`/`}> I'm so sorry </Link> </button>
+                    <button style={{fontSize: '49px', height: '20%'}} > <Link to={`/home`}> I'm so sorry </Link> </button>
                 </div>
                )
     }

@@ -18,7 +18,7 @@ var routes = (
     <Route name="signUp2" handler = { SignUp2 } style={{height: '100%'}}/>
     <Route name="signUp3" handler = { SignUp3 } style={{height: '100%'}}/>
     <Route name="signUp4" handler = { SignUp4 } style={{height: '100%'}}/>
-    <DefaultRoute handler={ Home } style={{height: '100%'}}/>
+    <DefaultRoute handler={ SignUp1 } style={{height: '100%'}}/>
     <NotFoundRoute handler={ NotFound } />
   </Route>
 );
