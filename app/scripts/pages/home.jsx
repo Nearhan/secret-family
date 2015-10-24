@@ -41,7 +41,7 @@ class Home extends React.Component {
   }
 
   incrementMonth() {
-    var m = this.state.month === 9 ? 9 : this.state.month + 1;
+    var m = this.state.month + 1;
     this.setState({
       month: m,
       showModal: true
@@ -53,10 +53,11 @@ class Home extends React.Component {
     switch (this.state.month) {
       case 2: return img + "music-concert.gif";
       case 3: return img + "play-catch.gif";
-      case 6: return img + "TV-TIME.gif";
-      case 7: return img + "familybeachday.gif";
-      case 8: return img + "dinner.gif";
-      case 9: return img + "MARG-SOLO.gif";
+      case 6: return img + "familybeachday.gif";
+      case 7: return img + "TV-TIME.gif";
+      case 8: return img + "macaroni.gif";
+      case 9: return img + "dinner.gif";
+      case 10: return img + "MARG-SOLO.gif";
       default: return img + "FAMILY-NORMAL.gif";
     }
   }
@@ -68,8 +69,9 @@ class Home extends React.Component {
       "Junior wants to play catch.",
       "Barbara got a new cat.",
       "Why do you travel so much for work?",
-      "What do you want to watch tonight?",
       "Beach! Fun! Yeah!",
+      "What do you want to watch tonight?",
+      "Junior misses you. He made this for you.",
       "Where do you think you're going? I just made dinner."
     ];
     return mtext[this.state.month - 1];
@@ -82,8 +84,9 @@ class Home extends React.Component {
       ["Easy there, Stephen Strasburg!", "Easy there, New Jersey's own Derek Jeter!"],
       ["Okay.", "Who's Barbara?"],
       ["It's the busy season.", "What do you mean?"],
-      ["Local news", "Emeril"],
       ["Cowabunga!", "This is the best vacation ever."],
+      ["Local news", "Emeril"],
+      ["Hide it in my car", "Hide it in my car"],
       ["I'm not that hungry.", "I don't feel well."]
     ];
     return mbuttons[this.state.month - 1];
@@ -94,8 +97,8 @@ class Home extends React.Component {
       ["80%", "86%", "52%"],
       ["72%", "67%", "64%"],
       ["80%", "86%", "52%"],
-      ["65%", "73%", "84%"],
       ["100%", "83%", "67%"],
+      ["65%", "73%", "84%"],
       ["64%", "90%", "72%"],
       ["100%", "85%", "64%"],
       ["20%", "50%", "20%"],
@@ -106,7 +109,7 @@ class Home extends React.Component {
       return bars[this.state.month - 1];
     }
     else {
-      return ["100%", "100%", "100%"];
+      return ["73%", "45%", "70%"];
     }
   }
 
