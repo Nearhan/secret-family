@@ -29,8 +29,6 @@ class Home extends React.Component {
   }
 
   click(e) {
-      console.log('hi')
-      console.log(Router)
   }
 
   render() {
@@ -38,7 +36,7 @@ class Home extends React.Component {
     return (
       <div>
         <h1> Secret Family New Jersey </h1>
-        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to="/" />Sign Up</Button>
+        <Button bsStyle="primary" bsSize="large" active onClick={this.click}> <Link to={`/signUp2`}> Sign Up </Link> </Button>
       </div>
     );
   }
