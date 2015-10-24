@@ -102,7 +102,7 @@ class Home extends React.Component {
   render() {
 
     return (
-    <Grid style={{height: '620px'}}>
+    <Grid style={{height: '580px'}}>
 
     <Modal show={this.state.showModal} onHide={this.close}>
       <Modal.Body style={{fontSize: "18px"}}>
