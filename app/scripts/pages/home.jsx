@@ -17,6 +17,7 @@ class Home extends React.Component {
     this.open = this.open.bind(this);
     this.modalText = this.modalText.bind(this);
     this.modalButtons = this.modalButtons.bind(this);
+    this.statusBars = this.statusBars.bind(this);
   }
 
   close() {
@@ -54,16 +55,31 @@ class Home extends React.Component {
 
   modalText() {
     var mtext = [
-      "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. Your son, Junior. Your daughter, June"
+      "You now have a second family that lives in New Jersey. This is going to be fun. There’s your beautiful wife Margaret. Your son, Junior. Your daughter, June.",
+      "Junior has a clarinet recital this Wednesday."
     ];
     return mtext[this.state.month - 1];
   }
 
   modalButtons() {
     var mbuttons = [
-      ["Cool", "Awesome"]
+      ["Cool", "Awesome"],
+      ["Of course I'll be there", "I'll try to make it"]
     ];
     return mbuttons[this.state.month - 1];
+  }
+
+  statusBars() {
+    var bars = [
+      ["100%", "100%", "100%"]
+    ];
+
+    if (this.state.month <= bars.length) {
+      return bars[this.state.month - 1];
+    }
+    else {
+      return ["100%", "100%", "100%"];
+    }
   }
 
   affection() {
@@ -107,11 +123,14 @@ class Home extends React.Component {
 
     <Row style={{height: '42%'}}>
       <h2>Happiness</h2>
-      <div className="statusbar"></div>
+      <div className="statusbar"
+        style={{width: this.statusBars()[0]}}></div>
       <h2>Health</h2>
-      <div className="statusbar"></div>
+      <div className="statusbar"
+        style={{width: this.statusBars()[1]}}></div>
       <h2>Money</h2>
-      <div className="statusbar"></div>
+      <div className="statusbar"
+        style={{width: this.statusBars()[2]}}></div>
     </Row>
 
     <Row style={{height: '42%'}}>
